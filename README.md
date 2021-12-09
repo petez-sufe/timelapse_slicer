@@ -11,3 +11,6 @@
 ### 2. Run the program
 ### 3. The program will create two folders inside the original directory. One is Processed and the other is Final. All the slices will be saved in the Processed directory. The final image will be stored in the Final directory. 
 ### 4. Sit down and ENJOY!
+
+## My result
+![Final Result](https://raw.githubusercontent.com/petez-sufe/TimeSlice/main/Final.jpg)
