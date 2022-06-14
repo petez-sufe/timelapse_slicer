@@ -1,0 +1,1 @@
+from .timelapse_slicer import slicer
