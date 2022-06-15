@@ -1,6 +1,6 @@
 from PIL import Image
 import os
-
+from tqdm import tqdm
 
 def remove_existing_folder(original_dir):
     if os.path.exists(f'{original_dir}Processed/'):
@@ -11,7 +11,8 @@ def get_file_list(original_dir, number_of_slices):
     real_list = list()
     for name in os.listdir(original_dir):
         if not name.startswith('.'):
-            file_list.append(f'{original_dir}{name}')
+            if name.endswith('.jpg'):
+                file_list.append(f'{original_dir}{name}')
     file_list.sort()
     print(f"{len(file_list)} images have been identified.")
     current_img = 0
@@ -33,7 +34,7 @@ def image_crop(file_list, original_dir, number_of_slices):
     i = 0
     if os.path.exists(f'{original_dir}processed/') == False:
         os.mkdir(f'{original_dir}processed/')
-    for each_pic in file_list:
+    for each_pic in tqdm(file_list):
         pic_name = each_pic.split('/')[-1]
         pic = Image.open(each_pic)
         image_new = pic.crop((left,top,right,bottom))
