@@ -35,9 +35,9 @@ All the picture files should have the same dimensions.
     timelapse_slicer.slicer(original_dir="YOUR FILE PATH 文件夹路径", number_of_slices="INTEGER 切片数量")
     ```
 
-3. The program will create two folders inside the original directory. One is Processed and the other is Final. All the slices will be saved in the Processed directory. The final image will be stored in the Final directory.
+3. The program will create three folders inside the original directory. They are Processed, Processedmulti and Final. All the slices will be saved in the Processed directory. The final image will be stored in the Final directory. There will be two final images. One is the normal time slice and the other is the image with gradient transition.
 
-    程序将会在你提供的文件夹内生成两个新文件夹。Processed文件夹包含所有的切片，Final文件夹内存有最终成品。
+    程序将会在你提供的文件夹内生成两个新文件夹。Processed文件夹包含所有的切片，Final文件夹内存有最终成品。最终成品会有两张图片，一张为标准时间切片，一张为渐变过渡时间切片（无痕）。
 
 4. Sit down and ENJOY! 坐和放宽！
 
@@ -46,6 +46,8 @@ All the picture files should have the same dimensions.
 ## My result 我的成果
 
 ![Final Result](https://raw.githubusercontent.com/petez-sufe/TimeSlice/main/Final.jpg)
+
+![Final Gradient Result](https://raw.githubusercontent.com/petez-sufe/TimeSlice/main/Final_Gradient.jpg)
 
 &nbsp;
 
