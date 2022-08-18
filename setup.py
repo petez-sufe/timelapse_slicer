@@ -7,7 +7,7 @@ package = ['timelapse_slicer']
 
 setup(
     name='timelapse_slicer',
-    version='1.1.0',
+    version='2.0.0',
     license='MIT',
     author="Xi Zhao",
     author_email='xz3068@columbia.edu',

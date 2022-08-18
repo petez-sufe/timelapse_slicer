@@ -6,6 +6,14 @@ This is an automated program for photographers who want to create TimeSlice pict
 
 这是一个帮助摄影师使用延时摄影照片自动化生成时间切片的python程序。使用此程序无需安装PS插件。
 
+ver 2.0.0 update:
+
+New feature added. Now this program can generate slicelapse photo sequence. A demo video can be found [Here](https://youtu.be/I7bmBJokcgU)
+
+2.0.0 版本更新内容：
+
+新增时间切片延时序列生成功能。[演示视频](https://youtu.be/I7bmBJokcgU)
+
 &nbsp;
 
 ## Before using this tool 在使用这个程序之前
@@ -32,12 +40,34 @@ All the picture files should have the same dimensions.
 
     ```python
     from timelapse_slicer import timelapse_slicer
-    timelapse_slicer.slicer(original_dir="YOUR FILE PATH 文件夹路径", number_of_slices="INTEGER 切片数量")
+    timelapse_slicer.slicer(original_dir, number_of_slices, mode, ignore_mode)
+
+    Parameters 参数:
+    original_dir="YOUR FILE PATH 文件夹路径" 
+    number_of_slices="INTEGER 切片数量" default=22
+    mode="standard/gradient/timelapse/all" default=all
+    ignore_mode="early/late" 为提高切片质量，程序会自动忽略部分图片，可选择序列前或后。
     ```
 
-3. The program will create three folders inside the original directory. They are Processed, Processedmulti and Final. All the slices will be saved in the Processed directory. The final image will be stored in the Final directory. There will be two final images. One is the normal time slice and the other is the image with gradient transition.
+    模式说明 Mode:
 
-    程序将会在你提供的文件夹内生成两个新文件夹。Processed文件夹包含所有的切片，Final文件夹内存有最终成品。最终成品会有两张图片，一张为标准时间切片，一张为渐变过渡时间切片（无痕）。
+    standard: Only standard time-slice image will be generated. 程序仅生成标准时间切片。
+
+    gradient: Only gradient time-slice image will be generated. 程序仅生成无痕渐变时间切片。
+
+    timelapse: Gradient time-slice image will be generated and slice-lapse sequence will be generated. 程序生成渐变时间切片及延时摄影序列。
+
+    all (default默认): Standard, gradient time-slice images will be generated as well as slice-lapse sequence. 程序生成标准、渐变时间切片及延时摄影序列。
+
+    忽略模式 ignore_mode:
+
+    This mode is used to better create slicelapse sequence. This will choose whether the early images or the late ones will be ignored if needed. The program will automatically ignore the images might impact the sequence.
+
+    这个参数是为了更好生成延时摄影序列，选择early则代表开始的照片会被忽略（如有需要），选择late则反之。
+
+3. The program will create several folders inside the original directory. They are Processed, Processedmulti, Final and Slicelapse. All the slices will be saved in the Processed directory. The final image will be stored in the Final directory. There will be two final images. One is the normal time slice and the other is the image with gradient transition.
+
+    程序将会在你提供的文件夹内生成数个新文件夹。Processed文件夹包含所有的切片，Processedmulti包含渐变切片，Final文件夹存有最终时间切片成品。如有延时摄影，图片序列将会在slicelapse文件夹中。
 
 4. Sit down and ENJOY! 坐和放宽！
 
